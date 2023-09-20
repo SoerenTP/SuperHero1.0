@@ -60,5 +60,15 @@ class DatabaseTest {
 
         assertEquals(expected, actual);
     }
+    @Test
+    void deleteSuperhero() {
+
+
+        int expected = db.getSuperheroes().size()-1;
+        db.deleteSuperhero("August");
+        int actual = db.getSuperheroes().size();
+
+        assertEquals(expected, actual);
+    }
 
 }

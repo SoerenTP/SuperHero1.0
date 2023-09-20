@@ -44,6 +44,18 @@ public class Database {
         } else {
             System.out.println("Superhelten med navnet '" + superheroName + "' blev ikke fundet.");
         }
+
+    }
+    public void deleteSuperhero(String superheroName) {
+        ArrayList<Superhero> søgeResultat = search(superheroName);
+
+        if (!søgeResultat.isEmpty()) {
+            Superhero superhelt = søgeResultat.get(0);
+            superhelteListe.remove(superhelt);
+            System.out.println("Superhelten '" + superheroName + "' er blevet slettet.");
+        } else {
+            System.out.println("Superhelten med navnet '" + superheroName + "' blev ikke fundet.");
+        }
     }
 
 

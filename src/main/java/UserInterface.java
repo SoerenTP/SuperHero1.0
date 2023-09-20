@@ -14,6 +14,7 @@ public class UserInterface {
                     "\nTast 3 for at printe din superhelte-database" +
                     "\nTast 4 for at søge efter en oprettet superhelt" +
                     "\nTast 5 for at redigere i en oprettet superhelt" +
+                    "\nTast 6 for at slette en superhelt" +
                     "\nTast 9 for at afslutte.");
             try {
                 menuValg = scanner.nextInt();
@@ -124,11 +125,15 @@ public class UserInterface {
                     String nyStyrke = scanner.nextLine();
 
                     // Kald editSuperhero-metoden i databasen for at opdatere superhelten
-                    database.editSuperhero(superheroName,nytNavn,nytÆgteNavn , nySuperKræft, nytOprettelsesÅr, erMenneske, nyStyrke);*/
+                    database.editSuperhero(superheroName,nytNavn,nytÆgteNavn , nySuperKræft, nytOprettelsesÅr, erMenneske, nyStyrke);
                 } else {
                     System.out.println("Superhelten med navnet '" + superheroName + "' blev ikke fundet.");
                 }
-            }
+            } else if (menuValg == 6) {
+            System.out.println("Indtast navnet på superhelten, du vil slette: ");
+            String superheroNameToDelete = scanner.nextLine();
+            database.deleteSuperhero(superheroNameToDelete);
+        }
 
         }
         while (menuValg != 9) ;
