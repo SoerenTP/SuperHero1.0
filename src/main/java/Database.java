@@ -27,22 +27,25 @@ public class Database {
         }
         return søgeResultat;
     }
-    //Giver os adgang til at redigere i de superhelte vi nu har oprettet i vores database ved at angive deres superhelte navn
-    /*public void editSuperhero(String superheroNavn, String nytNavn, String nytÆgteNavn, String nySuperKræft, int nytOprettelsesÅr, boolean erNytMenneske, String nyStyrke) {
-        Superhero superhelt = search(superheroNavn);
+    public void editSuperhero(String superheroName, String nytNavn, String nytÆgteNavn, String nySuperKræft, int nytOprettelsesÅr, boolean erNytMenneske, String nyStyrke) {
+        ArrayList<Superhero> søgeResultat = search(superheroName);
 
-        if (superhelt != null) {
+        if (!søgeResultat.isEmpty()) {
+            Superhero superhelt = søgeResultat.get(0); // Get the first superhero in the search result
+
             superhelt.setNavn(nytNavn);
             superhelt.setÆgteNavn(nytÆgteNavn);
             superhelt.setSuperKræft(nySuperKræft);
             superhelt.setOprettelsesÅr(nytOprettelsesÅr);
             superhelt.setErMenneske(erNytMenneske);
             superhelt.setStyrke(nyStyrke);
+
             System.out.println("Superhelt opdateret: " + superhelt);
         } else {
-            System.out.println("Superhelt med navn " + superheroNavn + " blev ikke fundet.");
+            System.out.println("Superhelten med navnet '" + superheroName + "' blev ikke fundet.");
         }
-    }*/
+    }
+
 
     public ArrayList<Superhero> getSuperheroes() {
         return superhelteListe;

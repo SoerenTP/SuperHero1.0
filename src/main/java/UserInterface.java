@@ -124,7 +124,7 @@ public class UserInterface {
                     String nyStyrke = scanner.nextLine();
 
                     // Kald editSuperhero-metoden i databasen for at opdatere superhelten
-                    /*database.editSuperhero(superheroName,nytNavn,nytÆgteNavn , nySuperKræft, nytOprettelsesÅr, erMenneske, nyStyrke);*/
+                    database.editSuperhero(superheroName,nytNavn,nytÆgteNavn , nySuperKræft, nytOprettelsesÅr, erMenneske, nyStyrke);*/
                 } else {
                     System.out.println("Superhelten med navnet '" + superheroName + "' blev ikke fundet.");
                 }
